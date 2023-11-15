@@ -32,6 +32,7 @@ function delete_cmt($id)
 {
     $sql = "delete from binhluan where id=" . $id;
     $sql = "delete from binhluan where id=" . $id;
+    $sql = "delete from binhluan where id=" . $id;
     $result = pdo_execute($sql);
 }
 ?>
