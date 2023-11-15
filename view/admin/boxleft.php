@@ -118,7 +118,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="index.php?act=list_cmt" class="nav-link">
             <i class="bi bi-chat-dots-fill"></i>
               <p>
                 Quản lí bình luận 
@@ -127,7 +127,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="index.php?act=add_hethong" class="nav-link">
             <i class="bi bi-gear-wide-connected"></i>
               <p>
                 Quản lí hệ thống
@@ -135,7 +135,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="index.php?act=add_baner" class="nav-link">
             <i class="bi bi-images"></i>
               <p>
                 Quản lí banner
@@ -144,7 +144,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="index.php?act=add_news" class="nav-link">
             <i class="bi bi-newspaper"></i>
               <p>
                 Quản lí tin tức  
@@ -153,7 +153,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="index.php?act=add_khuyenmai" class="nav-link">
             <i class="bi bi-tencent-qq"></i>
               <p>
                 Quản lí khuyến mại 
@@ -162,7 +162,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="index.php?act=list_lienhe" class="nav-link">
             <i class="bi bi-envelope-check-fill"></i>
               <p>
                 Quản lí liên hệ 

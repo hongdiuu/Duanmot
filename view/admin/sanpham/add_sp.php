@@ -24,7 +24,7 @@ include 'boxleft.php';
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Tên sản phẩm</label>
-            <input type="text" name="ten_dm" class="form-control" id="exampleInputPassword1" placeholder="Tên danh mục sản phẩm">
+            <input type="text" name="ten_dm" class="form-control" id="exampleInputPassword1" placeholder="Tên sản phẩm">
           </div>
           <div class="col-sm-6">
             <div class="form-group">
@@ -36,6 +36,10 @@ include 'boxleft.php';
             </div>
           </div>
           <div class="form-group">
+            <label for="exampleInputPassword1">Ngày Nhập</label>
+            <input type="date" name="ten_dm" class="form-control" id="exampleInputPassword1" placeholder="ngày nhập sản phẩm">
+          </div>
+          <div class="form-group">
             <label>Mô tả</label>
             <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
           </div>
@@ -43,7 +47,6 @@ include 'boxleft.php';
         <!-- /.card-body -->
         <div class="card-footer">
           <input type="button" class="btn btn-primary" value="Thêm Mới">
-
           <button type="reset" class="btn btn-primary">Nhập lại</button>
           <a href="index.php?act=list_sp"> <input type="button" class="btn btn-primary" value="Danh sách"></a>
         </div>

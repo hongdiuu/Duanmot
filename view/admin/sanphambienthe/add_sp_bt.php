@@ -18,13 +18,13 @@ include 'boxleft.php';
             <!-- form start -->
             <form id="quickForm">
               <div class="card-body">
-              <div class="form-group">
-                        <label>Tên sản phẩm</label>
-                        <select class="form-control">
-                          <option>option 1</option>
-                          <option>option 2</option>
-                        </select>
-                      </div>
+                <div class="form-group">
+                  <label>Tên sản phẩm</label>
+                  <select class="form-control">
+                    <option>option 1</option>
+                    <option>option 2</option>
+                  </select>
+                </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Size sản phẩm </label>
                   <input type="text" name="id_dm" class="form-control" id="exampleInputEmail1" placeholder="id danh mục">
@@ -33,10 +33,10 @@ include 'boxleft.php';
                   <label for="exampleInputPassword1">Màu sắc sản phẩm</label>
                   <input type="text" name="ten_dm" class="form-control" id="exampleInputPassword1" placeholder="Tên danh mục sản phẩm">
                 </div>
-               
+
                 <div class="form-group">
                   <label for="exampleInputPassword1">Số lượng sản phẩm</label>
-                  <input type="text" name="ten_dm" class="form-control" id="exampleInputPassword1" placeholder="Tên danh mục sản phẩm">
+                  <input type="number" name="ten_dm" class="form-control" id="exampleInputPassword1" placeholder="Tên danh mục sản phẩm">
                 </div>
 
                 <div class="form-group">
@@ -48,9 +48,9 @@ include 'boxleft.php';
               <!-- /.card-body -->
               <div class="card-footer">
                 <input type="button" class="btn btn-primary" value="Thêm Mới">
-               
+
                 <button type="reset" class="btn btn-primary">Nhập lại</button>
-               <a href="index.php?act=list_sp_bt">   <input type="button" class="btn btn-primary" value="Danh sách"></a>
+                <a href="index.php?act=list_sp_bt"> <input type="button" class="btn btn-primary" value="Danh sách"></a>
               </div>
             </form>
           </div>

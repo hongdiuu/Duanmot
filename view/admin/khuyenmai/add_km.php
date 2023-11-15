@@ -19,45 +19,49 @@ include 'boxleft.php';
             <form id="quickForm">
               <div class="card-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">tên khuyến mại </label><br>
-                  <input type="text" name="id_bn" class="form-control" id="exampleInputPassword1" placeholder="nội dung" >
+                  <label>Tên sản phẩm</label>
+                  <select class="form-control">
+                    <option>option 1</option>
+                    <option>option 2</option>
+                  </select>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">phần trăm khuyến mại</label>
-                  <input type="text" name="ten_bn" class="form-control" id="exampleInputPassword1" placeholder="id tài khoản">
+                  <label for="exampleInputPassword1">mã khuyến mại</label>
+                  <input type="text" name="ten_bn" class="form-control" id="exampleInputPassword1" placeholder="Mã khuyến mãi">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Tên khuyến mại </label><br>
+                  <input type="text" name="id_bn" class="form-control" id="exampleInputPassword1" placeholder="tên khuyến mãi">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Phần trăm khuyến mại</label>
+                  <input type="number" name="ten_bn" class="form-control" id="exampleInputPassword1" placeholder="% khuyến mãi">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">ngày bắt đầu</label>
-                  <input type="date" name="ten_bn" class="form-control" id="exampleInputPassword1" placeholder="id sản phẩm">
+                  <input type="date" name="ten_bn" class="form-control" id="exampleInputPassword1" placeholder="ngày bắt đầu">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">ngày kết thúc</label>
-                  <input type="date" name="ten_bn" class="form-control" id="exampleInputPassword1" placeholder="ngày bình luận">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">mô tả</label>
-                  <input type="text" name="ten_bn" class="form-control" id="exampleInputPassword1" placeholder="sao">
+                  <input type="date" name="ten_bn" class="form-control" id="exampleInputPassword1" placeholder="ngày kết thúc">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">trạng thái</label>
-                  <input type="text" name="ten_bn" class="form-control" id="exampleInputPassword1" placeholder="sao">
+                  <input type="text" name="ten_bn" class="form-control" id="exampleInputPassword1" placeholder="trang thai">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">id sản phẩm</label>
-                  <input type="text" name="ten_bn" class="form-control" id="exampleInputPassword1" placeholder="sao">
+                  <label>Mô tả</label>
+                  <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
                 </div>
 
 
-              </<div class="form-group">
-                  <label for="exampleInputPassword1">mã khuyến mại</label>
-                  <input type="text" name="ten_bn" class="form-control" id="exampleInputPassword1" placeholder="sao">
-                </div>div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                <input type="button" class="btn btn-primary" value="Thêm Mới">
-<button type="reset" class="btn btn-primary">Nhập lại</button>
-               <a href="index.php?act=list_km">   <input type="button" class="btn btn-primary" value="Danh sách"></a>
-              </div>
+
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <input type="button" class="btn btn-primary" value="Thêm Mới">
+                  <button type="reset" class="btn btn-primary">Nhập lại</button>
+                  <a href="index.php?act=list_khuyenmai"> <input type="button" class="btn btn-primary" value="Danh sách"></a>
+                </div>
             </form>
           </div>
           <!-- /.card -->

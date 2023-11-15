@@ -45,7 +45,7 @@ include './boxleft.php';
         <div class="icon">
           <i class="ion ion-person-add"></i>
         </div>
-        <a href="../khachhang/lis_kh.php" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="index.php?act=list_kh" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -60,7 +60,7 @@ include './boxleft.php';
         <div class="icon">
           <i class="ion ion-pie-graph"></i>
         </div>
-        <a href="./tintuc/list_new.php" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="index.php?act=list_news" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->

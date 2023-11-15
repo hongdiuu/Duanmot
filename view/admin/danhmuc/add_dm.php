@@ -19,10 +19,6 @@ include './boxleft.php';
             <form id="quickForm">
               <div class="card-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">mã danh mục</label>
-                  <input type="text" name="id_dm" class="form-control" id="exampleInputEmail1" placeholder="id danh mục">
-                </div>
-                <div class="form-group">
                   <label for="exampleInputPassword1">Tên danh mục</label>
                   <input type="text" name="ten_dm" class="form-control" id="exampleInputPassword1" placeholder="Tên danh mục sản phẩm">
                 </div>
