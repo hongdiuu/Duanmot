@@ -2,9 +2,7 @@
 include './boxleft.php';
 ?>
 <div class="content-wrapper">
-
-
-  <div class="card">
+  <div class="card" style="border: 1px solid gray;  width: 98%; margin: 10px auto;">
     <div class="card-header border-0">
       <h3>Danh sách bình luận </h3>
     </div>
@@ -12,8 +10,9 @@ include './boxleft.php';
       <table class="table table-striped table-valign-middle">
         <thead>
           <tr>
-            <th>id khách hàng</th>
-            <th>id sản phẩm</th>
+            <th>id cmt</th>
+            <th>Tên Khách Hàng</th>
+            <th>Tên sản phẩm</th>
             <th>Nội dung</th>
             <th>Sao</th>
             <th>Ngày đánh giá</th>
@@ -21,26 +20,30 @@ include './boxleft.php';
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>kh01</td>
-            <td>sp01</td>
-            <td>sản phẩm ok</td>
-            <td>10 điểm</td>
-            <td>15/11/2023</td>
-            <td>hiển thị</td>
-            <td>
-              <a href="#" class="btn btn-primary">
+          <?php
+          foreach ($result as $value) {
+            extract($value);
+            $linkdelete = "index.php?act=xoa_cmt&idcmt=" . $id;
+            echo '<tr>
+              <td>' . $id . '</td>
+              <td>' . $namekh . '</td>
+              <td>' . $tensp . '</td>
+              <td>' . $noi_dung . '</td>
+              <td>' . $diem_sao . '</td>
+              <td>' . $ngay_cmt . '</td>
+              <td>' . $trang_thai . '</td>
+              <td>
+              <a href="' . $linkdelete . '" class="btn btn-primary">
                 <i class="bi bi-trash3-fill"></i>
                 xóa
               </a>
             </td>
-          </tr>
-
+            </tr>';
+          }
+          ?>
         </tbody>
       </table>
     </div>
   </div>
   <!-- /.card -->
-
-
 </div>

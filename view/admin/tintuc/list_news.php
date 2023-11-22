@@ -23,30 +23,40 @@ include './boxleft.php';
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>01</td>
-                        <td>Tin tức thời trang 24h</td>
-                        <td><img src="../../thu_vien/dist/img/user1-128x128.jpg" alt="" width="80px" height="80px"></td>
-                        <td>23/11/2023</td>
-                        <td>Hiểm thị</td>
-                        <td>sdfhjsadfjkasfhjkashfkjasfjajsdfasmfnjasfjkafjk</td>
+                    <?php
+                    foreach ($listtintuc as $tintuc) {
+                        extract($tintuc);
+                        $suatintuc = "index.php?act=sua_tt&id=" . $id;
+                        $xoatintuc = "index.php?act=xoa_tt&id=" . $id;
+                        $anhtintuc = "../../upload/" .  $anh_tin_tuc;
+                        if (is_file($anhtintuc)) {
+                            $anhtt = "<img src='" . $anhtintuc . "' height='100px'>";
+                        } else {
+                            $anhtt = "no photo";
+                        }
+                        echo '<tr>
+                                <td>' . $id . '</td>
+                        <td>' . $tieu_de . '</td>
+                        <td>' . $anhtt . '</td>
+                        <td>' . $ngay_dang . '</td>
+                        <td>' . $trang_thai . '</td>
+                        <td style="width: 100px; height: auto;">' . $noi_dung . '</td>
                         <td>
-                            <a href="#" class="btn btn-primary" style="margin-right: 30px;">
-                                <i class="bi bi-pencil-fill"></i>
-                                Edit
-                            </a>
-                            <a href="#" class="btn btn-primary">
-                                <i class="bi bi-trash3-fill"></i>
-                                Xóa
-                            </a>
-                        </td>
-                    </tr>
-
+                        <a href="' . $suatintuc . '" class="btn btn-primary" style="margin-right: 30px;">
+                        <i class="bi bi-pencil-fill"></i>
+                        Edit
+                        </a>
+                        <a href="' . $xoatintuc . '" class="btn btn-primary">
+                        <i class="bi bi-trash3-fill"></i>
+                         Xóa
+                        </a>
+                        </td>      
+                        </tr>';
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>
     </div>
     <!-- /.card -->
-
-
 </div>

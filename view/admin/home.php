@@ -9,7 +9,6 @@ include './boxleft.php';
       <div class="small-box bg-info">
         <div class="inner">
           <h3>150 oder</h3>
-
           <p>Tổng đơn hàng</p>
         </div>
         <div class="icon">
@@ -23,9 +22,14 @@ include './boxleft.php';
       <!-- small box -->
       <div class="small-box bg-success">
         <div class="inner">
-          <h3>53<sup style="font-size: 20px">sản phẩm</sup></h3>
-
-          <p>Tổng sản phẩm</p>
+          <h3>
+            <?php
+            foreach ($count_sp as $value) {
+              extract($value);
+              echo ' ' . $sl . '<sup style="font-size: 20px">sản phẩm</sup></h3>';
+            }
+            ?>
+            <p>Tổng sản phẩm</p>
         </div>
         <div class="icon">
           <i class="ion ion-stats-bars"></i>
@@ -38,7 +42,12 @@ include './boxleft.php';
       <!-- small box -->
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>40 user</h3>
+          <?php
+          foreach ($sl_kh as $value) {
+            extract($value);
+            echo ' <h3>' . $sl . ' user</h3>';
+          }
+          ?>
 
           <p>Tổng khách hàng</p>
         </div>
@@ -53,8 +62,12 @@ include './boxleft.php';
       <!-- small box -->
       <div class="small-box bg-danger">
         <div class="inner">
-          <h3>6 bài viết</h3>
-
+          <?php
+          foreach ($sl_news as $value) {
+            extract($value);
+            echo '  <h3>' . $sl . ' bài viết</h3>';
+          }
+          ?>
           <p>Tổng bài viết</p>
         </div>
         <div class="icon">

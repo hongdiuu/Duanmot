@@ -20,33 +20,45 @@ include './boxleft.php';
                         <th>Ảnh banner</th>
                         <th>link</th>
                         <th>Mô Tả</th>
+                        <th>Trạng thái</th>
                         <th>More</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>01</td>
-                        <td>name</td>
-                        <td><img src="../../thu_vien/dist/img/user1-128x128.jpg" alt="" width="80px" height="80px"></td>
-                        <td><a href="#"> link baner </a> </td>
-                        <td>baner cho kỉ niêm 20-11</td>
-                        <td>
-                            <a href="#" class="btn btn-primary" style="margin-right: 30px;">
-                                <i class="bi bi-pencil-fill"></i>
-                                Edit
-                            </a>
-                            <a href="#" class="btn btn-primary">
-                                <i class="bi bi-trash3-fill"></i>
-                                Xóa
-                            </a>
-                        </td>
-                    </tr>
-
+                    <?php
+                    foreach ($listbanner as $banner) {
+                        extract($banner);
+                        $suatbanner = "index.php?act=sua_bn&id=" . $id;
+                        $xoatbanner = "index.php?act=xoa_bn&id=" . $id;
+                        $anhbanner = "../../upload/" .  $hinh_anh;
+                        if (is_file($anhbanner)) {
+                            $anhbn = "<img src='" . $anhbanner . "' height='80px'>";
+                        } else {
+                            $anhbn = "no photo";
+                        }
+                        echo '<tr>
+                            <td>' . $id . '</td>
+                            <td>' . $ten . '</td>
+                            <td>' . $anhbn . '</td>
+                            <td style="width: 200px; height: auto;"><a href="' . $link . '">' . $link . '</a></td>
+                            <td>' . $mo_ta . '</td>
+                            <td>' . $trang_thai . '</td>
+                            <td>
+                                <a href="' . $suatbanner . '" class="btn btn-primary" style="margin-right: 30px;">
+                                    <i class="bi bi-pencil-fill"></i>
+                                    Edit
+                                </a>
+                                <a href="' . $xoatbanner . '" class="btn btn-primary">
+                                    <i class="bi bi-trash3-fill"></i>
+                                    Xóa
+                                </a>
+                            </td>
+                        </tr>';
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>
     </div>
     <!-- /.card -->
-
-
 </div>

@@ -16,6 +16,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index.php" class="nav-link">Home</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.php?act=thoat" class="nav-link">Thoát</a>
+      </li>
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -36,7 +39,7 @@
           <img src="../../thu_vien/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="index.php" class="d-block">Hà Thế Bảo</a>
+          <a href="index.php" class="d-block">Nhóm 2 dự án 1</a>
         </div>
       </div>
 
@@ -58,65 +61,49 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
          
-         
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-            <i class="bi bi-archive-fill"></i>
-              <p>
-                Sản Phẩm 
-                <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">3</span>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-
+               <li class="nav-header">Sản Phẩm</li>
+               
             <li class="nav-item">
-            <a href="index.php?act=add_dm" class="nav-link">
+            <a href="index.php?act=list_dm" class="nav-link">
             <i class="bi bi-bookmarks-fill"></i>
               <p>
                 Quản lí danh mục 
               </p>
             </a>
           </li>
-              <li class="nav-item">
-                <a href="index.php?act=add_sp" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+          <li class="nav-item">
+                <a href="index.php?act=list_sp" class="nav-link">
+                <i class="bi bi-archive-fill"></i>
                   <p>Quản lí sản phẩm  </p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="index.php?act=add_spbt" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Quản lí biến thể </p>
+          <li class="nav-item">
+                <a href="index.php?act=list_sp_bt" class="nav-link">
+                <i class="bi bi-archive-fill"></i>
+                  <p>Quản lí biến thể sản phẩm </p>
                 </a>
               </li>
-            </ul>
-          </li>
-       
+          <li class="nav-header">Tài Khoản</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-            <i class="bi bi-person-circle"></i>
-              <p>
-                Tài Khoản  
-                <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">2</span>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="index.php?act=add_kh" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="index.php?act=list_kh" class="nav-link">
+                <i class="bi bi-people-fill"></i>
                   <p>Quản lí khách hàng   </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="index.php?act=list_nd" class="nav-link">
+                <i class="bi bi-people-fill"></i>
                   <p>Quản lí người dùng </p>
                 </a>
               </li>
-            </ul>
-          </li>
+
+              <li class="nav-item">
+                <a href="index.php?act=list_cv" class="nav-link">
+                <i class="bi bi-people-fill"></i>
+                  <p>Quản lí Chức vụ </p>
+                </a>
+              </li>
+              <li class="nav-header">Chức năng khác</li>
           <li class="nav-item">
             <a href="index.php?act=list_cmt" class="nav-link">
             <i class="bi bi-chat-dots-fill"></i>
@@ -127,15 +114,15 @@
           </li>
 
           <li class="nav-item">
-            <a href="index.php?act=add_hethong" class="nav-link">
+            <a href="index.php?act=list_hethong" class="nav-link">
             <i class="bi bi-gear-wide-connected"></i>
               <p>
-                Quản lí hệ thống
+                Quản lí thông tin hệ thống
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="index.php?act=add_baner" class="nav-link">
+            <a href="index.php?act=list_baner" class="nav-link">
             <i class="bi bi-images"></i>
               <p>
                 Quản lí banner
@@ -144,7 +131,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="index.php?act=add_news" class="nav-link">
+            <a href="index.php?act=list_news" class="nav-link">
             <i class="bi bi-newspaper"></i>
               <p>
                 Quản lí tin tức  
@@ -153,7 +140,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="index.php?act=add_khuyenmai" class="nav-link">
+            <a href="index.php?act=list_khuyenmai" class="nav-link">
             <i class="bi bi-tencent-qq"></i>
               <p>
                 Quản lí khuyến mại 

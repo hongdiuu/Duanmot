@@ -1,0 +1,87 @@
+<?php
+function insert_tk_kh($user, $pass, $hoten, $ngaysinh, $diachi, $email, $sdt)
+{
+    $sql = "insert into tai_khoan(user_name,pass,ho_ten,ngay_sinh,sdt,email,dia_chi) values('$user','$pass','$hoten','$ngaysinh','$sdt','$email','$diachi')";
+    pdo_execute($sql);
+}
+
+function load_list_ttkh($keyw)
+{
+    $sql = "select * from tai_khoan where id_chucvu = '0'";
+    if ($keyw != "") {
+        $sql .= " AND ho_ten LIKE '%" . $keyw . "%'";
+    }
+    $sql .= " order by id desc limit 0,9";
+    $list_ttkh = pdo_query($sql);
+    return $list_ttkh;
+}
+
+function load_one_kh($idkh)
+{
+    $sql = "SELECT * FROM tai_khoan where id=" . $idkh;
+    $khachhang = pdo_query_one($sql);
+    return  $khachhang;
+}
+
+function update_tt_kh($id, $user, $pass, $hoten, $ngaysinh, $diachi, $email, $sdt)
+{
+    $sql = "update tai_khoan set user_name='$user',pass='$pass',ho_ten='$hoten',ngay_sinh='$ngaysinh',dia_chi='$diachi',email='$email',sdt='$sdt' where id=$id";
+    pdo_execute($sql);
+}
+
+function delete_tk_kh($id)
+{
+    $sql = "delete from tai_khoan where id=" . $id;
+    $result = pdo_execute($sql);
+}
+//người dùng
+
+function load_list_cv()
+{
+    $sql = "select * from chuc_vu order by id desc";
+    $list_cv = pdo_query($sql);
+    return $list_cv;
+}
+
+function insert_tt_nd($user, $pass, $hoten, $ngaysinh, $diachi, $email, $sdt, $idcv)
+{
+    $sql = "insert into tai_khoan(user_name,pass,ho_ten,ngay_sinh,sdt,email,dia_chi,id_chucvu) values('$user','$pass','$hoten','$ngaysinh','$sdt','$email','$diachi','$idcv')";
+    pdo_execute($sql);
+}
+
+function load_list_ttnd($keyw)
+{
+        $sql = "select tk.*, cv.ten_chucvu from tai_khoan as tk  join chuc_vu as cv
+        on tk.id_chucvu = cv.id where cv.ten_chucvu LIKE '%admin%' or cv.ten_chucvu LIKE '%nhân viên%'";
+    if ($keyw != "") {
+        $sql .= " AND ho_ten LIKE '%" . $keyw . "%'";
+    }
+    $sql .= " order by tk.id desc limit 0,9";
+    $list_ttkh = pdo_query($sql);
+    return $list_ttkh;
+}
+
+function load_one_nd($idnd)
+{
+    $sql = "SELECT * FROM tai_khoan join chuc_vu on tai_khoan.id_chucvu = chuc_vu.id where tai_khoan.id=" . $idnd;
+    $khachhang = pdo_query_one($sql);
+    return  $khachhang;
+}
+
+function update_tt_nd($id, $user, $pass, $hoten, $ngaysinh, $diachi, $email, $sdt, $idcv)
+{
+    $sql = "update tai_khoan set user_name='$user',pass='$pass',ho_ten='$hoten',ngay_sinh='$ngaysinh',dia_chi='$diachi',email='$email',sdt='$sdt', id_chucvu='$idcv' where id=$id";
+    pdo_execute($sql);
+}
+
+function delete_tk_nd($id)
+{
+    $sql = "delete from tai_khoan where id=" . $id;
+    $result = pdo_execute($sql);
+}
+
+function load_sl_kh(){
+    $sql="select count(tai_khoan.id) as sl from tai_khoan where id_chucvu = '0' ";
+    $count_user = pdo_query($sql);
+    return $count_user;
+}

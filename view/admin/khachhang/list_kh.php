@@ -2,14 +2,18 @@
 include 'boxleft.php';
 ?>
 <div class="content-wrapper">
-
-
-    <div class="card">
+    <div class="card" style="border: 1px solid gray;  width: 98%; margin: 10px auto;">
         <div class="card-header border-0">
-            <h3>Danh sách sản phẩm biến thể </h3>
-            <div style="float: right;">
-    <a href="index.php?act=add_kh"> <input type="button" class="btn btn-primary" value="Nhập thêm"></a>
-  </div>
+            <h3>Danh sách khách hàng </h3>
+            <div class="search">
+                <form action="index.php?act=list_kh" method="post" style="display: flex;">
+                    <input type="text" name="keyw" style="width: 150px; height: 30px;">
+                    <input type="submit" name="ok" value="Tìm kiếm">
+                </form>
+                <div style="float: right;">
+                    <a href="index.php?act=add_kh"> <input type="button" class="btn btn-primary" value="Nhập thêm"></a>
+                </div>
+            </div>
         </div>
         <div class="card-body table-responsive p-0">
             <table class="table table-striped table-valign-middle">
@@ -23,33 +27,38 @@ include 'boxleft.php';
                         <th>Địa Chỉ</th>
                         <th>Email</th>
                         <th>SĐT</th>
-                        <th>Chức Vụ</th>
                         <th>More</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>01</td>
-                        <td>baotheha</td>
-                        <td>1234</td>
-                        <td>Hà Thế Bảo</td>
-                        <td>16/05/2004</td>
-                        <td>Trịnh Văn Bô Cầu Giấy </td>
-                        <td>baotheha@gmail.com</td>
-                        <td>0806679721</td>
-                        <td>Admin</td>
+                    <?php
+                    foreach ($list_user as $list) {
+                        extract($list);
+                        $linkupdate = "index.php?act=sua_tt_khachhang&idkh=" . $id;
+                        $linkdelete = "index.php?act=xoa_tt_khachhang&idkh=" . $id;
+                        echo ' <tr>
+                        <td>' . $id . '</td>
+                        <td>' . $user_name . '</td>
+                        <td>' . $pass . '</td>
+                        <td>' . $ho_ten . '</td>
+                        <td>' . $ngay_sinh . '</td>
+                        <td>' . $dia_chi . ' </td>
+                        <td>' . $email . '</td>
+                        <td>' . $sdt . '</td>
+                      
                         <td>
-                            <a href="#" class="btn btn-primary" style="margin-right: 30px;">
+                            <a href="' . $linkupdate . '" class="btn btn-primary" style="margin-right: 30px;">
                                 <i class="bi bi-pencil-fill"></i>
                                 Edit
                             </a>
-                            <a href="#" class="btn btn-primary">
+                            <a href="' . $linkdelete . '" class="btn btn-primary">
                                 <i class="bi bi-trash3-fill"></i>
                                 xóa
                             </a>
                         </td>
-                    </tr>
-
+                    </tr>';
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>

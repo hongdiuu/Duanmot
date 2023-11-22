@@ -2,13 +2,17 @@
 include './boxleft.php';
 ?>
 <div class="content-wrapper">
-
-
-  <div class="card">
+  <div class="card" style="border: 1px solid gray;  width: 98%; margin: 10px auto;">
     <div class="card-header border-0">
       <h3>Danh sách khuyến mại </h3>
-      <div style="float: right;">
-        <a href="index.php?act=add_khuyenmai"> <input type="button" class="btn btn-primary" value="Nhập thêm"></a>
+      <div class="search">
+        <form action="index.php?act=list_khuyenmai" method="post" style="display: flex;">
+          <input type="text" name="keyw" style="width: 150px; height: 30px;">
+          <input type="submit" name="ok" value="Tìm kiếm">
+        </form>
+        <div style="float: right;">
+          <a href="index.php?act=add_khuyenmai"> <input type="button" class="btn btn-primary" value="Nhập thêm"></a>
+        </div>
       </div>
     </div>
     <div class="card-body table-responsive p-0">
@@ -21,31 +25,39 @@ include './boxleft.php';
             <th>Phần Trăm %</th>
             <th>Bắt đầu</th>
             <th>Kết thúc</th>
-            <th>Trạng thái </th>
             <th>Mô Tả</th>
+            <th>More</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>sp01</td>
-            <td>km0001</td>
-            <td>khuyến mại 20-11</td>
-            <td>30</td>
-            <td>15/11/2023</td>
-            <td>23/11/2023</td>
-            <td>hiển thị</td>
-            <td>chi ân ngày nhà giáo Việt Nam</td>
+          <?php
+          foreach ($listkm as  $value) {
+            extract($value);
+            $linkupdate = "index.php?act=sua_km&idkm=" . $id;
+            $linkdelete = "index.php?act=xoa_km&idkm=" . $id;
+            echo '<tr>
+            <td>'.$ten_sp.'</td>
+            <td>'.$ma_km.'</td>
+            <td>'.$ten_km.'</td>
+            <td>'.$phan_tram.'</td>
+            <td>'.$bat_dau.'</td>
+            <td>'.$ket_thuc.'</td>
+            <td style="width: 100px; height: auto;">'.$mo_ta.'</td>
             <td>
-              <a href="#" class="btn btn-primary" style="margin-right: 30px;">
+              <a href="'.$linkupdate.'" class="btn btn-primary" style="margin-right: 30px;">
                 <i class="bi bi-pencil-fill"></i>
                 Edit
               </a>
-              <a href="#" class="btn btn-primary">
+              <a href="'.$linkdelete.'" class="btn btn-primary">
                 <i class="bi bi-trash3-fill"></i>
                 Xóa
               </a>
             </td>
-          </tr>
+          </tr>';
+          }
+
+          ?>
+
 
         </tbody>
       </table>

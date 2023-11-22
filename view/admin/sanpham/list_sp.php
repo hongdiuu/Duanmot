@@ -4,12 +4,28 @@ include 'boxleft.php';
 <div class="content-wrapper">
 
 
-  <div class="card">
+  <div class="card" style="border: 1px solid gray;  width: 98%; margin: 10px auto;">
     <div class="card-header border-0">
       <h3>Danh sách sản phẩm </h3>
-      <div style="float: right;">
-        <a href="index.php?act=add_sp"> <input type="button" class="btn btn-primary" value="Nhập thêm"></a>
+      <div class="search">
+        <form action="index.php?act=list_sp" method="post" style="display: flex;">
+          <input type="text" name="keyw" style="width: 150px; height: 30px;">
+          <select name="iddm" id="" style="width: 60px; height: 30px;">
+            <option value="0" selected>tất cả</option>
+            <?php
+            foreach ($listdm as  $value) {
+              extract($value);
+              echo '  <option value="' . $id . '">' . $ten_dm . '</option>';
+            }
+            ?>
+          </select>
+          <input type="submit" name="listok" value="Tìm kiếm">
+        </form>
+        <div style="float: right;">
+          <a href="index.php?act=add_sp"> <input type="button" class="btn btn-primary" value="Nhập thêm"></a>
+        </div>
       </div>
+
     </div>
 
     <div class="card-body table-responsive p-0">
@@ -18,30 +34,45 @@ include 'boxleft.php';
           <tr>
             <th>mã sản phẩm</th>
             <th>Tên sản phẩm</th>
-            <th>Hình ảnh sản phẩm</th>
+            <th>Ảnh sản Phẩm</th>
+            <th>Ngày Nhập</th>
             <th>Mô tả</th>
             <th>More</th>
 
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>01</td>
-            <td>váy nam</td>
-            <td><img src="../../thu_vien/dist/img/avatar2.png" alt="" width="80px" height="80px"></td>
-            <td>sản phẩm đẹp tuyể vời</td>
-            <td>
-              <a href="#" class="btn btn-primary" style="margin-right: 30px;">
-                <i class="bi bi-pencil-fill"></i>
-                Edit
-              </a>
-              <a href="#" class="btn btn-primary">
-                <i class="bi bi-trash3-fill"></i>
-                xóa
-              </a>
-            </td>
-          </tr>
 
+          <?php
+          foreach ($listsp  as $list_sp) {
+            extract($list_sp);
+            $linkupdate = "index.php?act=sua_sp&idsp=" . $id;
+            $linkdelete = "index.php?act=xoa_sp&idsp=" . $id;
+            $imgpath = "../../upload/" . $anh_sp;
+            if (is_file($imgpath)) {
+              $hinh_sp = "<img src='" . $imgpath . "' height='60' width='80'> ";
+            }
+            echo '
+              <tr>
+              <td>' . $id . '</td>
+              <td>' . $ten_sp . '</td>
+              <td>' . $hinh_sp . '</td>
+              <td>' . $ngay_nhap . '</td>
+              <td>' . $mo_ta . '</td>
+              <td>
+                <a href="' . $linkupdate . '" class="btn btn-primary" style="margin-right: 30px;">
+                  <i class="bi bi-pencil-fill"></i>
+                  Edit
+                </a>
+                <a href="' . $linkdelete . '" class="btn btn-primary">
+                  <i class="bi bi-trash3-fill"></i>
+                  xóa
+                </a>
+              </td>
+              </tr>
+              ';
+          }
+          ?>
         </tbody>
       </table>
     </div>

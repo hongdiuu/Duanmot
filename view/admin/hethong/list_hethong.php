@@ -2,11 +2,9 @@
 include './boxleft.php';
 ?>
 <div class="content-wrapper">
-
-
-  <div class="card">
+  <div class="card" style="border: 1px solid gray;  width: 98%; margin: 10px auto;">
     <div class="card-header border-0">
-      <h3>Danh sách hệ thống </h3>
+      <h3>Danh sách thông tin hệ thống </h3>
       <div style="float: right;">
         <a href="index.php?act=add_hethong"> <input type="button" class="btn btn-primary" value="Nhập thêm"></a>
       </div>
@@ -24,28 +22,44 @@ include './boxleft.php';
             <th>Fax</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>01</td>
-            <td>Thời trang giới trẻ</td>
-            <td>0336274225</td>
-            <td>baohtph41689@fpt.eu.vn</td>
-            <td>Cầu Giấy Hà Nội</td>
-            <td><img src="../../thu_vien/dist/img/user1-128x128.jpg" alt="" width="80px" height="80px"></td>
-            <td>0243242342342342</td>
-            <td>
-              <a href="#" class="btn btn-primary" style="margin-right: 30px;">
-                <i class="bi bi-pencil-fill"></i>
-                Edit
-              </a>
-            </td>
-          </tr>
+        <tbody >
+          <?php
+          foreach ($listhethong as $hethong) {
+            extract($hethong);
+            $suahethong = "index.php?act=sua_ht&id=" . $id;
+            $xoahethong = "index.php?act=xoa_ht&id=" . $id;
+            $anhlogo = "../../upload/" .  $logo_cuahang;
+            if (is_file($anhlogo)) {
+              $logo = "<img src='" . $anhlogo . "' height='60px' width='100px'>";
+            } else {
+              $logo = "no photo";
+            }
+            echo '<tr>
+        <td>' . $id . '</td>
+        <td>' . $ten_cuahang . '</td>
+        <td>' . $sdt_cuahang . '</td>
+        <td>' . $email_cuahang . '</td>
+       <td>' . $diachi_cuahang . '</td>
+        <td>' . $logo . '</td>
+        <td>' . $so_fax . '</td>
+           <td>
+             <a href="' . $suahethong . '" class="btn btn-primary" style="margin-right: 30px;">
+             <i class="bi bi-pencil-fill"></i>
+          Edit
+             </a>
+           <a href="' . $xoahethong . '" class="btn btn-primary">
+                   <i class="bi bi-trash3-fill"></i>
+                                Xóa
+                            </a>
+                        </td>
+                                
+                               </tr>  ';
+          }
 
+          ?>
+          </tr>
         </tbody>
       </table>
     </div>
   </div>
-  <!-- /.card -->
-
-
 </div>
