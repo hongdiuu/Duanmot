@@ -59,7 +59,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3">
                             <div class="logo">
-                                <a href="index.php?act=index"><img src="../../thu_vien/asset/img/logo/logo.png" alt=""></a>
+                                <a href="index.php"><img src="../../thu_vien/asset/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-9">
@@ -68,24 +68,13 @@
                                 <div class="main_menu menu_position"> 
                                     <nav>  
                                         <ul>
-                                            <li><a class="active"  href="index.php?act=index">Trang chủ<i class="fa fa-angle-down"></i></a>
-                                                <!-- <ul class="sub_menu">
-                                                    <li><a href="index.html">Home shop 1</a></li>
-                                                    <li><a href="index-2.html">Home shop 2</a></li>
-                                                    <li><a href="index-3.html">Home shop 3</a></li>
-                                                    <li><a href="index-4.html">Home shop 4</a></li>
-                                                    <li><a href="index-5.html">Home shop 5</a></li>
-                                                    <li><a href="index-6.html">Home shop 6</a></li>
-                                                    <li><a href="index-7.html">Home shop 7</a></li>
-                                                    <li><a href="index-8.html">Home shop 8</a></li>
-                                                    <li><a href="index-9.html">Home shop 9</a></li>
-                                                    <li><a href="index-10.html">Home shop 10</a></li>
-                                                </ul> -->
+                                            <li><a class="active"  href="index.php">Trang chủ<i class="fa fa-angle-down"></i></a>
+                                              
                                             </li>
-                                            <li class="mega_items"><a href="index.php?act=listsanpham">Cửa Hàng<i class="fa fa-angle-down"></i></a> 
+                                            <li class="mega_items"><a href="index.php?act=sanpham">Sản Phẩm<i class="fa fa-angle-down"></i></a> 
                                                 <div class="mega_menu">
-                                                    <!-- <ul class="mega_menu_inner">
-                                                        <li><a href="#">Shop Layouts</a>
+                                                    <ul class="mega_menu_inner">
+                                                        <li><a href="#">Danh mục sản phẩm</a>
                                                             <ul>
                                                                 <li><a href="shop-fullwidth.html">Full Width</a></li>
                                                                 <li><a href="shop-fullwidth-list.html">Full Width list</a></li>
@@ -94,35 +83,18 @@
                                                                 <li><a href="shop-list.html">List View</a></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="#">other Pages</a>
-                                                            <ul>
-                                                                <li><a href="index.php?act=giohang">cart</a></li>
-                                                                <li><a href="wishlist.html">Wishlist</a></li>
-                                                                <li><a href="index.php?act=thanhtoan">Checkout</a></li>
-                                                                <li><a href="index.php?act=taikhoan">my account</a></li>
-                                                                <li><a href="404.html">Error 404</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li><a href="#">Product Types</a>
-                                                            <ul>
-                                                                <li><a href="product-details.html">product details</a></li>
-                                                                <li><a href="product-sidebar.html">product sidebar</a></li>
-                                                                <li><a href="product-grouped.html">product grouped</a></li>
-                                                                <li><a href="variable-product.html">product variable</a></li>
-
-                                                            </ul>
-                                                        </li>
+                                                     
                                                     </ul> 
                                                 </div>
                                             </li>
-                                            <li><a href="blog.html">Tin tức<i class="fa fa-angle-down"></i></a>
+                                            <li><a href="blog.html">Sản Phẩm Khuyến Mại<i class="fa fa-angle-down"></i></a>
                                                  <ul class="sub_menu pages">
                                                     <li><a href="blog-details.html">blog details</a></li>
                                                     <li><a href="blog-fullwidth.html">blog fullwidth</a></li>
                                                     <li><a href="blog-sidebar.html">blog sidebar</a></li>
-                                                </ul> -->
+                                                </ul>
                                             </li>
-                                            <li><a href="index.php?act=tintuc">Tin Tức <i class="fa fa-angle-down"></i></a>
+                                            <li><a href="index.php?act=tintuc">Tin Tức </a>
                                                 <!-- <ul class="sub_menu pages">
                                                     <li><a href="about.html">About Us</a></li>
                                                     <li><a href="services.html">services</a></li>
@@ -159,21 +131,6 @@
                                                         <li><a href="index.php?act=thanhtoan">Thanh toán</a></li>
                                                     </ul>
                                                 </div>
-                                                <!-- <div class="dropdown_account-list">
-                                                   <label>Currency</label>
-                                                    <ul>
-                                                        <li><a href="#">Euro</a></li>
-                                                        <li><a href="#">Pound Sterling</a></li>
-                                                        <li><a href="#">US Dollar</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="dropdown_account-list">
-                                                   <label>Language</label>
-                                                    <ul>
-                                                        <li><a href="#"><img src="../../thu_vien/asset/img/icon/language.png" alt=""> English</a></li>
-                                                        <li><a href="#"><img src="../../thu_vien/asset/img/icon/language2.png" alt=""> French</a></li>
-                                                    </ul>
-                                                </div> -->
                                             </div>
                                        </li>
                                        <li class="mini_cart_wrapper"><a href="javascript:void(0)"><img src="../../thu_vien/asset/img/icon/icon-cart.png" alt=""> <span class="item_count">2</span></a>

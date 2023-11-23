@@ -3,7 +3,7 @@ include "hearder.php";
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-        case 'listsanpham':
+        case 'sanpham':
             include "listsanpham.php";
             break;
         case 'chitietsanpham':
@@ -11,9 +11,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
         case 'giohang':
             include "giohang.php";
-            break;
-        case 'dangnhap':
-            include "dangnhap.php";
             break;
         case 'lienhe':
             include "lienhe.php";
@@ -30,18 +27,17 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case 'chitiettintuc':
             include "chitiettintuc.php";
             break;
-
-        default:
-            // include "home.php";
+        case 'dangki':
+            include "dangnhap.php";
             break;
-
+        case 'dangnhap':
+            include "dangnhap.php";
+            break;
+        default:
+            break;
     }
-
 } else {
     include "home.php";
 }
 
 include "footer.php";
-
-
-?>

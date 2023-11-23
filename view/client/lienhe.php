@@ -18,7 +18,7 @@
     <!--contact map start-->
     <div class="contact_map mt-60">
        <div class="map-area">
-          <div id="googleMap"></div>
+          <div id="googleMap"><iframe  src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d251637.95196238213!2d105.6189045!3d9.779349!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1700764544637!5m2!1svi!2s" width="1500" height="450" style="border:0; padding-left: 20px;"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
        </div>
     </div>
     <!--contact map end-->
