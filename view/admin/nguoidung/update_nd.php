@@ -2,7 +2,6 @@
 include 'boxleft.php';
 if (is_array($load_one_nd)) {
     extract($load_one_nd);
-    $idnd = $id;
 }
 ?>
 <!-- Content Wrapper. Contains page content -->
@@ -23,7 +22,7 @@ if (is_array($load_one_nd)) {
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">password</label>
-                        <input type="password" name="pass" class="form-control" id="exampleInputPassword1" value="<?= $pass ?>">
+                        <input type="text" name="pass" class="form-control" id="exampleInputPassword1" value="<?= $pass ?>">
                     </div>
 
                     <div class="form-group">
@@ -66,7 +65,7 @@ if (is_array($load_one_nd)) {
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <input type="hidden" name="idnd" value="<?php if (isset($idnd) &&  $idnd > 0) echo $idnd ?>">
+                    <input type="hidden" name="idnd" value="<?php if (isset($id_nd) &&   $id_nd > 0) echo  $id_nd ?>">
                     <input type="submit" name="capnhat" class="btn btn-primary" value="Cập Nhập">
                     <button type="reset" class="btn btn-primary">Nhập lại</button>
                     <a href="index.php?act=list_nd"> <input type="button" class="btn btn-primary" value="Danh sách"></a>

@@ -1,4 +1,5 @@
 <?php
+// quan tri khach hang
 function insert_tk_kh($user, $pass, $hoten, $ngaysinh, $diachi, $email, $sdt)
 {
     $sql = "insert into tai_khoan(user_name,pass,ho_ten,ngay_sinh,sdt,email,dia_chi) values('$user','$pass','$hoten','$ngaysinh','$sdt','$email','$diachi')";
@@ -34,7 +35,7 @@ function delete_tk_kh($id)
     $sql = "delete from tai_khoan where id=" . $id;
     $result = pdo_execute($sql);
 }
-//người dùng
+// quan tri người dùng
 
 function load_list_cv()
 {
@@ -63,7 +64,7 @@ function load_list_ttnd($keyw)
 
 function load_one_nd($idnd)
 {
-    $sql = "SELECT * FROM tai_khoan join chuc_vu on tai_khoan.id_chucvu = chuc_vu.id where tai_khoan.id=" . $idnd;
+    $sql = "SELECT tai_khoan.*,tai_khoan.id as id_nd FROM tai_khoan join chuc_vu on tai_khoan.id_chucvu = chuc_vu.id where tai_khoan.id=" . $idnd;
     $khachhang = pdo_query_one($sql);
     return  $khachhang;
 }

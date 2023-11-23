@@ -14,7 +14,7 @@ include 'boxleft.php';
       <table class="table table-striped table-valign-middle">
         <thead>
           <tr>
-            <th>mã danh mục</th>
+            <th>ID danh mục</th>
             <th>Tên danh mục</th>
             <th>Mô tả</th>
             <th>Trạng thái</th>

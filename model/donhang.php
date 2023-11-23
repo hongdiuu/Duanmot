@@ -10,36 +10,21 @@ function load_list_hoadon()
     return  $list_dh;
 }
 
-function load_cthd($idhd)
+function load_chitiet_hd($id_hd)
 {
-    $sql = "select hoa_don.*, tai_khoan.*, chitiet_hd.*, sp_bienthe.*, sanpham.*, khuyen_mai.*";
-    $sql .= " from tai_khoan join hoa_don on tai_khoan.id = hoa_don.id_user join chitiet_hd on hoa_don.id=chitiet_hd.id_hd join sp_bienthe on chitiet_hd.id_bt =sp_bienthe.id join sanpham on sp_bienthe.id_sp = sanpham.id join khuyen_mai on sanpham.id = khuyen_mai.id_sp";
-    $sql .= " where hoa_don.id=$idhd";
-    $sql.=" group by chitiet_hd.id order by chitiet_hd.id desc";
-    $cthd = pdo_query_one($sql);
-    return $cthd;
-}
-function load_one_cthd($mahd){
-    $sql= " select chitiet_hd.*,sanpham.ten_sp,sp_bienthe.gia,sp_bienthe.size,sp_bienthe.mau_sac,hoa_don.ma_hd,hoa_don.ngay_dat,hoa_don.trang_thai,tai_khoan.*,khuyen_mai.ma_km,khuyen_mai.phan_tram from chitiet_hd
+    $sql = "select chitiet_hd.*,chitiet_hd.id as id_cthd,sp_bienthe.gia,sp_bienthe.size,sp_bienthe.mau_sac,sp_bienthe.id_sp,hoa_don.*,hoa_don.trang_thai AS trangthai_donhang,tai_khoan.*,khuyen_mai.ma_km,khuyen_mai.phan_tram,sanpham.ten_sp,(chitiet_hd.so_luong*sp_bienthe.gia)AS thanh_tien from chitiet_hd
     join hoa_don on chitiet_hd.id_hd=hoa_don.id
     join sp_bienthe on chitiet_hd.id_bt=sp_bienthe.id
     join tai_khoan on hoa_don.id_user=tai_khoan.id
-    join ";
+    join sanpham on sp_bienthe.id_sp=sanpham.id
+    join khuyen_mai on hoa_don.id_km=khuyen_mai.id
+    WHERE chitiet_hd.id_hd=$id_hd";
+    $list = pdo_query($sql);
+    return  $list;
 }
 
-// unction load_cmt($idsp)
-// {
-//     $sql = "SELECT binhluan.noidung,binhluan.ngaybinhluan,taikhoan.user FROM binhluan
-//     JOIN taikhoan on binhluan.iduser=taikhoan.id
-//     JOIN sanpham on binhluan.idpro=sanpham.id
-//     WHERE sanpham.id=$idsp";
-//     $result = pdo_query($sql);
-//     return $result;
-// }
-
-// function delete_tk($id)
-// {
-//     $sql = "delete from taikhoan where id=" . $id;
-//     $result = pdo_execute($sql);
-// }
-?>
+function load_sl_order(){
+    $sql="select count(chitiet_hd.id) as sl from chitiet_hd ";
+    $count_order = pdo_query($sql);
+    return $count_order;
+}

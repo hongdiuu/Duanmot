@@ -23,7 +23,7 @@ if (is_array( $load_one_kh)) {
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">password</label>
-            <input type="password" name="pass" class="form-control" id="exampleInputPassword1"  value="<?=$pass?>">
+            <input type="text" name="pass" class="form-control" id="exampleInputPassword1"  value="<?=$pass?>">
           </div>
 
           <div class="form-group">

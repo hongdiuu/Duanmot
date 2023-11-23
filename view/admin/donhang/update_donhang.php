@@ -1,5 +1,6 @@
 <?php
 include 'boxleft.php';
+
 ?>
 <div class="content-wrapper">
 
