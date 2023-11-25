@@ -107,6 +107,12 @@ a, button {
   text-decoration: none;
   cursor: pointer;
 }
+a, input {
+  color: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 a, button, img, input, span {
   transition: all 0.3s ease 0s;
@@ -1170,7 +1176,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     height: 38px;
   }
 }
-.search_widget form button {
+.search_widget form .timkiem_sp {
   position: absolute;
   top: 0;
   right: 0;
@@ -10038,7 +10044,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-right: 0;
 }
 
-.product_review_form button {
+.product_review_form   {
   border: none;
   background: #252525;
   color: #ffffff;
@@ -10053,7 +10059,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 5px;
   font-size: 13px;
 }
-.product_review_form button:hover {
+.product_review_form {
   background: #09c6ab;
   color: #ffffff;
 }

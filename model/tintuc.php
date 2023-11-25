@@ -1,6 +1,6 @@
 <?php 
-function inser_tintuc($tieude,$noidung,$filename,$ngaydang,$trangthai){
-    $sql= "insert into tin_tuc(tieu_de,noi_dung,anh_tin_tuc,ngay_dang,trang_thai) values('$tieude','$noidung','$filename','$ngaydang','$trangthai')";
+function inser_tintuc($tieude,$noidung,$filename,$ngaydang,$mota){
+    $sql= "insert into tin_tuc(tieu_de,noi_dung,anh_tin_tuc,ngay_dang,mo_ta) values('$tieude','$noidung','$filename','$ngaydang','$mota')";
     pdo_execute($sql);
     
 }
@@ -19,8 +19,8 @@ function load_one_tt($id){
     return $tt;
 }
 
-function update_tintuc($tieude,$noidung,$filename,$ngaydang,$trangthai,$id){
-    $sql = "update tin_tuc set tieu_de='".$tieude."',noi_dung='".$noidung."',anh_tin_tuc='".$filename."',ngay_dang='".$ngaydang."',trang_thai='".$trangthai."'where id=".$id;
+function update_tintuc($tieude,$noidung,$filename,$ngaydang,$mota,$id){
+    $sql = "update tin_tuc set tieu_de='".$tieude."',noi_dung='".$noidung."',anh_tin_tuc='".$filename."',ngay_dang='".$ngaydang."',mo_ta='".$mota."'where id=".$id;
     pdo_execute($sql);
 }
 function delete_tintuc($id){

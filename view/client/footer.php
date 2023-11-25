@@ -120,7 +120,7 @@
     <!--footer area end-->
    
     <!-- modal area start-->
-    <div class="modal fade" id="modal_box" tabindex="-1" role="dialog"  aria-hidden="true">
+    <!-- <div class="modal fade" id="modal_box" tabindex="-1" role="dialog"  aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
@@ -171,8 +171,8 @@
                                         </ul>
                                     </div>    
                                 </div>  
-                            </div> 
-                            <div class="col-lg-7 col-md-7 col-sm-12">
+                            </div>  -->
+                            <!-- <div class="col-lg-7 col-md-7 col-sm-12">
                                 <div class="modal_right">
                                     <div class="modal_title mb-10">
                                         <h2>Donec Ac Tempus</h2> 
@@ -223,7 +223,7 @@
                                         </ul>    
                                     </div>      
                                 </div>    
-                            </div>    
+                            </div>     -->
                         </div>     
                     </div>
                 </div>    

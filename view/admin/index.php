@@ -75,11 +75,11 @@ if (isset($_SESSION['user']) && is_array($_SESSION['user'])) {
                     $ngaynhap = $_POST['ngaynhap'];
                     $mota = $_POST['mota'];
                     $trangthai = $_POST['trangthai'];
-
+                    $giasp = $_POST['giasp'];
                     $img = $_FILES['anhsp']['name'];
                     $tmp_img = $_FILES['anhsp']['tmp_name'];
                     move_uploaded_file($tmp_img, "../../upload/" . $img);
-                    insertsp($tensp, $img, $ngaynhap, $mota, $trangthai, $iddm);
+                    insertsp($tensp, $img, $ngaynhap, $giasp, $mota, $trangthai, $iddm);
                     $thongbao = "them thanh cong !";
                 }
                 $list_dm = load_list_dm();
@@ -114,11 +114,12 @@ if (isset($_SESSION['user']) && is_array($_SESSION['user'])) {
                     $iddm = $_POST['iddm'];
                     $tensp = $_POST['tensp'];
                     $ngaynhap = $_POST['ngaynhap'];
+                    $giasp = $_POST['giasp'];
                     $mota = $_POST['mota'];
                     $img = $_FILES['anhsp']['name'];
                     $tmp_img = $_FILES['anhsp']['tmp_name'];
                     move_uploaded_file($tmp_img, "../../upload/" . $img);
-                    update_sp($tensp, $img, $ngaynhap, $mota, $iddm, $id);
+                    update_sp($tensp, $img,$giasp, $ngaynhap, $mota, $iddm, $id);
                     $thongbao = "cap nhat thanh cong !";
                 }
                 $listdm = load_list_dm();
@@ -242,9 +243,9 @@ if (isset($_SESSION['user']) && is_array($_SESSION['user'])) {
                         echo "The file";
                     } else {
                     }
-                    $trangthai = $_POST["trang_thai"];
-                    $ngaydang = $_POST["noi_dung"];
-                    update_tintuc($tieude, $noidung, $filename, $ngaydang, $trangthai, $id);
+                    $mota = $_POST["mota"];
+                    $ngaydang = $_POST["ngay_dang"];
+                    update_tintuc($tieude, $noidung, $filename, $ngaydang, $mota, $id);
                     $thongbao = "cap nhat thanh cong";
                 }
                 $listtintuc = loadall_tintuc();

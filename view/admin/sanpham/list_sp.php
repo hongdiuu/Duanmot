@@ -35,6 +35,7 @@ include 'boxleft.php';
             <th>mã sản phẩm</th>
             <th>Tên sản phẩm</th>
             <th>Ảnh sản Phẩm</th>
+            <th>Giá Sản phẩm</th>
             <th>Ngày Nhập</th>
             <th>Mô tả</th>
             <th>More</th>
@@ -57,6 +58,7 @@ include 'boxleft.php';
               <td>' . $id . '</td>
               <td>' . $ten_sp . '</td>
               <td>' . $hinh_sp . '</td>
+              <td>' . $gia_sp . '</td>
               <td>' . $ngay_nhap . '</td>
               <td>' . $mo_ta . '</td>
               <td>

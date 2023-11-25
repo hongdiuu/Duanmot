@@ -17,10 +17,6 @@ include 'boxleft.php';
                         <label for="exampleInputEmail1">Tiêu đề </label><br>
                         <input type="text" name="tieu_de" class="form-control" id="exampleInputPassword1" placeholder="Tiêu đề">
                     </div>
-                <div class="form-group">
-                        <label>Nội Dung</label>
-                        <textarea class="form-control" rows="3" placeholder="nội dung ..." name="noi_dung"></textarea>
-                    </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputFile">Hình Ảnh</label>
@@ -30,19 +26,19 @@ include 'boxleft.php';
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="form-group">
-                        <label for="exampleInputPassword1">ảnh</label>
-                        <input type="file" name="anh_tin_tuc" class="form-control" id="exampleInputPassword1" placeholder="">
-                    </div> -->
                     <div class="form-group">
                         <label for="exampleInputPassword1">Ngày đăng</label>
                         <input type="date" name="ngay_dang" class="form-control" id="exampleInputPassword1" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Trạng thái</label>
-                        <input type="text" name="trang_thai" class="form-control" id="exampleInputPassword1" placeholder="trạng thái">
+                        <label>Mô tả</label>
+                        <textarea class="form-control" rows="3" placeholder="nội dung ..." name="mota"></textarea>
                     </div>
-                    
+                    <div class="form-group">
+                        <label>Nội Dung</label>
+                        <textarea class="form-control" rows="3" placeholder="nội dung ..." name="noi_dung"></textarea>
+                    </div>
+
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
@@ -50,11 +46,11 @@ include 'boxleft.php';
                     <button type="reset" class="btn btn-primary">Nhập lại</button>
                     <a href="index.php?act=list_news"> <input type="button" class="btn btn-primary" value="Danh sách"></a>
                 </div>
-                <?php 
-           if(isset($thongbao)&&($thongbao!= "")){
-echo $thongbao;
-           }
-           ?> 
+                <?php
+                if (isset($thongbao) && ($thongbao != "")) {
+                    echo $thongbao;
+                }
+                ?>
             </form>
         </div>
         <!-- /.card -->

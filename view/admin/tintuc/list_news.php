@@ -17,7 +17,7 @@ include './boxleft.php';
                         <th>Tiêu đề</th>
                         <th>Hình Ảnh</th>
                         <th>Ngày Đăng</th>
-                        <th>Trạng Thái</th>
+                        <th>Mô tả</th>
                         <th>Nội Dung</th>
                         <th>More</th>
                     </tr>
@@ -39,8 +39,8 @@ include './boxleft.php';
                         <td>' . $tieu_de . '</td>
                         <td>' . $anhtt . '</td>
                         <td>' . $ngay_dang . '</td>
-                        <td>' . $trang_thai . '</td>
-                        <td style="width: 100px; height: auto;">' . $noi_dung . '</td>
+                        <td style="width: 200px; height: auto;">' . $mo_ta . '</td>
+                        <td style="width: 200px; height: auto;">' . $noi_dung . '</td>
                         <td>
                         <a href="' . $suatintuc . '" class="btn btn-primary" style="margin-right: 30px;">
                         <i class="bi bi-pencil-fill"></i>

@@ -1,14 +1,14 @@
 <?php
-function insertsp($tensp, $img_name, $ngaynhap, $mota, $trangthai, $iddm)
+function insertsp($tensp, $img_name,$giasp, $ngaynhap, $mota, $trangthai, $iddm)
 {
-    $sql = "INSERT INTO sanpham(ten_sp,anh_sp,ngay_nhap,mo_ta,trang_thai,id_dm) VALUES('$tensp','$img_name','$ngaynhap','$mota','$trangthai','$iddm')";
+    $sql = "INSERT INTO sanpham(ten_sp,anh_sp,gia_sp,ngay_nhap,mo_ta,trang_thai,id_dm) VALUES('$tensp','$img_name','$ngaynhap','$giasp','$mota','$trangthai','$iddm')";
     pdo_execute($sql);
 }
 
 
 function load_list_sp($keyw, $iddm)
 {
-    $sql = "select * from sanpham where 1";
+    $sql = "select * from sanpham where 1 ";
     if ($keyw != "") {
         $sql .= " AND ten_sp LIKE '%" . $keyw . "%'";
     }
@@ -16,7 +16,7 @@ function load_list_sp($keyw, $iddm)
         $sql .= " AND id_dm LIKE '%" . $iddm . "%'";
     }
 
-    $sql .= " order by id desc limit 0,9";
+    $sql .= " order by sanpham.id desc limit 0,9";
     $listsp = pdo_query($sql);
     return $listsp;
 }
@@ -34,12 +34,12 @@ function load_one_sp($id)
     return $result;
 }
 
-function update_sp($tensp, $img, $ngaynhap, $mota, $iddm, $id)
+function update_sp($tensp, $img, $giasp, $ngaynhap, $mota, $iddm, $id)
 {
     if ($img == "") {
-        $sql = "update sanpham set ten_sp='$tensp',ngay_nhap='$ngaynhap',mo_ta='$mota',id_dm='$iddm'  where id=$id";
+        $sql = "update sanpham set ten_sp='$tensp',gia_sp='$giasp',ngay_nhap='$ngaynhap',mo_ta='$mota',id_dm='$iddm'  where id=$id";
     } else {
-        $sql = "update sanpham set ten_sp='$tensp',anh_sp='$img',ngay_nhap='$ngaynhap',mo_ta='$mota',id_dm='$iddm'  where id=$id";
+        $sql = "update sanpham set ten_sp='$tensp',anh_sp='$img',gia_sp='$giasp',ngay_nhap='$ngaynhap',mo_ta='$mota',id_dm='$iddm'  where id=$id";
     }
     pdo_execute($sql);
 }
@@ -92,3 +92,8 @@ function load_sl_sp(){
     return $count_sp;
 }
 //trên giao diện 
+function load_list_sp_noibat(){
+$sql="select * from sanpham order by luot_xem desc";
+$list=pdo_query($sql);
+return $list;
+}

@@ -40,6 +40,10 @@ include 'boxleft.php';
             </div>
           </div>
           <div class="form-group">
+            <label for="exampleInputPassword1">Giá sp</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Giá sản phẩm" name="giasp">
+          </div>
+          <div class="form-group">
             <label for="exampleInputPassword1">Ngày Nhập</label>
             <input type="date" class="form-control" id="exampleInputPassword1" placeholder="ngày nhập sản phẩm" name="ngaynhap">
           </div>

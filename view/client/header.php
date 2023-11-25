@@ -3,6 +3,7 @@
 
 
 <!-- Mirrored from htmldemo.net/presiden/presiden/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 Nov 2023 14:48:14 GMT -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -11,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="../../thu_vien/asset/img/favicon.ico">
-    
+
     <!-- CSS 
     ========================= -->
     <!--bootstrap min css-->
@@ -36,26 +37,26 @@
     <link rel="stylesheet" href="../../thu_vien/asset/css/slinky.menu.css">
     <!--plugins css-->
     <link rel="stylesheet" href="../../thu_vien/asset/css/plugins.css">
-    
+
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="../../thu_vien/asset/css/style.css">
-    
+
     <!--modernizr min js here-->
     <script src="../../thu_vien/asset/js/vendor/modernizr-3.7.1.min.js"></script>
 </head>
 
 <body>
-   
+
     <!--header area start-->
-    
+
     <!--offcanvas menu area start-->
-  
+
     <!--offcanvas menu area end-->
-    
+
     <header>
         <div class="main_header">
             <div class="header_container sticky-header">
-                <div class="container">  
+                <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-3">
                             <div class="logo">
@@ -65,34 +66,30 @@
                         <div class="col-lg-9">
                             <div class="header_container_right">
                                 <!--main menu start-->
-                                <div class="main_menu menu_position"> 
-                                    <nav>  
+                                <div class="main_menu menu_position">
+                                    <nav>
                                         <ul>
-                                            <li><a class="active"  href="index.php">Trang chủ<i class="fa fa-angle-down"></i></a>
-                                              
+                                            <li><a class="active" href="index.php">Trang chủ<i class="fa fa-angle-down"></i></a>
+
                                             </li>
-                                            <li class="mega_items"><a href="index.php?act=sanpham">Sản Phẩm<i class="fa fa-angle-down"></i></a> 
+                                            <li class="mega_items"><a href="index.php?act=sanpham">Sản Phẩm<i class="fa fa-angle-down"></i></a>
                                                 <div class="mega_menu">
                                                     <ul class="mega_menu_inner">
                                                         <li><a href="#">Danh mục sản phẩm</a>
-                                                            <ul>
-                                                                <li><a href="shop-fullwidth.html">Full Width</a></li>
-                                                                <li><a href="shop-fullwidth-list.html">Full Width list</a></li>
-                                                                <li><a href="shop-right-sidebar.html">Right Sidebar </a></li>
-                                                                <li><a href="shop-right-sidebar-list.html"> Right Sidebar list</a></li>
-                                                                <li><a href="shop-list.html">List View</a></li>
-                                                            </ul>
+                                                            <?php   
+                                                          
+                                                            foreach ($all_dm as  $value) {
+                                                                extract($value);
+                                                             
+                                                                $link = "index.php?act=sanpham&iddm=" . $id;
+                                                                echo '<ul>
+                                                        <li><a href="' . $link . '">' . $ten_dm . '</a></li> 
+                                                        </ul>';
+                                                            }
+                                                            ?>
                                                         </li>
-                                                     
-                                                    </ul> 
+                                                    </ul>
                                                 </div>
-                                            </li>
-                                            <li><a href="blog.html">Sản Phẩm Khuyến Mại<i class="fa fa-angle-down"></i></a>
-                                                 <ul class="sub_menu pages">
-                                                    <li><a href="blog-details.html">blog details</a></li>
-                                                    <li><a href="blog-fullwidth.html">blog fullwidth</a></li>
-                                                    <li><a href="blog-sidebar.html">blog sidebar</a></li>
-                                                </ul>
                                             </li>
                                             <li><a href="index.php?act=tintuc">Tin Tức </a>
                                                 <!-- <ul class="sub_menu pages">
@@ -103,25 +100,26 @@
                                                     <li><a href="login.html">login</a></li>
                                                     <li><a href="404.html">Error 404</a></li>
                                                 </ul> -->
-                                            </li> 
+                                            </li>
                                             <!-- <li><a href="about.html">about Us</a></li> -->
                                             <li><a href="index.php?act=lienhe"> Liên hệ</a></li>
-                                            <li><a href="index.php?act=dangnhap"> Đăng Nhập</a></li>
-                                        </ul>  
-                                    </nav> 
+                                            <li><a href="index.php?act=dangnhap_tk"> Đăng Nhập</a></li>
+                                            
+                                        </ul>
+                                    </nav>
                                 </div>
                                 <!--main menu end-->
                                 <div class="header_right_info">
-                                   <ul>
-                                       <li class="search_box"><a href="javascript:void(0)"><img src="../../thu_vien/asset/img/icon/icon-search.png" alt=""></a>
-                                           <div class="search_widget">
-                                                <form action="#">
-                                                    <input placeholder="Search entire store here ..." type="text">
-                                                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    <ul>
+                                        <li class="search_box"><a href="javascript:void(0)"><img src="../../thu_vien/asset/img/icon/icon-search.png" alt=""></a>
+                                            <div class="search_widget">
+                                                <form action="index.php?act=sanpham" method="post">
+                                                    <input name="timkiem" placeholder="Search entire store here ..." type="text">
+                                                    <input style=" position: absolute;top: 0; right: 0; width: 50px;height: auto;border: 0; background: #09c6ab;color: #fff;font-size: 14px;padding: 0;" type="submit" name="smb"></input>
                                                 </form>
                                             </div>
-                                       </li>
-                                       <li class="header_account"><a href="javascript:void(0)"><img src="../../thu_vien/asset/img/icon/icon-account.png" alt=""></a>
+                                        </li>
+                                        <li class="header_account"><a href="javascript:void(0)"><img src="../../thu_vien/asset/img/icon/icon-account.png" alt=""></a>
                                             <div class="dropdown_account">
                                                 <div class="dropdown_account-list">
                                                     <ul>
@@ -132,30 +130,30 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                       </li>
-                                       <li class="mini_cart_wrapper"><a href="javascript:void(0)"><img src="../../thu_vien/asset/img/icon/icon-cart.png" alt=""> <span class="item_count">2</span></a>
+                                        </li>
+                                        <li class="mini_cart_wrapper"><a href="javascript:void(0)"><img src="../../thu_vien/asset/img/icon/icon-cart.png" alt=""> <span class="item_count">2</span></a>
                                             <!--mini cart-->
                                             <div class="mini_cart">
                                                 <div class="cart_gallery">
                                                     <div class="cart_item">
-                                                       <div class="cart_img">
-                                                           <a href="#"><img src="../../thu_vien/asset/img/s-product/product.jpg" alt=""></a>
-                                                       </div>
+                                                        <div class="cart_img">
+                                                            <a href="#"><img src="../../thu_vien/asset/img/s-product/product.jpg" alt=""></a>
+                                                        </div>
                                                         <div class="cart_info">
                                                             <a href="#">Primis In Faucibus</a>
-                                                            <p>1 x <span> $65.00 </span></p>    
+                                                            <p>1 x <span> $65.00 </span></p>
                                                         </div>
                                                         <div class="cart_remove">
                                                             <a href="#"><i class="fa fa-times-circle"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="cart_item">
-                                                       <div class="cart_img">
-                                                           <a href="#"><img src="../../thu_vien/asset/img/s-product/product2.jpg" alt=""></a>
-                                                       </div>
+                                                        <div class="cart_img">
+                                                            <a href="#"><img src="../../thu_vien/asset/img/s-product/product2.jpg" alt=""></a>
+                                                        </div>
                                                         <div class="cart_info">
                                                             <a href="#">Letraset Sheets</a>
-                                                            <p>1 x <span> $60.00 </span></p>    
+                                                            <p>1 x <span> $60.00 </span></p>
                                                         </div>
                                                         <div class="cart_remove">
                                                             <a href="#"><i class="fa fa-times-circle"></i></a>
@@ -175,7 +173,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="mini_cart_footer">
-                                                   <div class="cart_button">
+                                                    <div class="cart_button">
                                                         <a href="index.php?act=giohang"><i class="fa fa-shopping-cart"></i> Xem Giỏi Hàng</a>
                                                     </div>
                                                     <div class="cart_button">
@@ -185,14 +183,14 @@
                                                 </div>
                                             </div>
                                             <!--mini cart end-->
-                                       </li>
-                                   </ul>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </header>

@@ -32,3 +32,16 @@ function delete_dm($id)
     $sql = "delete from danh_muc where id=" . $id;
     pdo_execute($sql);
 }
+
+//treen trang clients
+function load_ten_dm($iddm){
+    if ($iddm>0) {
+        $sql="select * from danh_muc where id=".$iddm;
+        $dm=pdo_query_one($sql);
+        extract($dm);
+        return $name;
+    }else {
+        return "";
+    }
+  
+}

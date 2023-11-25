@@ -52,7 +52,7 @@ function insert_tt_nd($user, $pass, $hoten, $ngaysinh, $diachi, $email, $sdt, $i
 
 function load_list_ttnd($keyw)
 {
-        $sql = "select tk.*, cv.ten_chucvu from tai_khoan as tk  join chuc_vu as cv
+    $sql = "select tk.*, cv.ten_chucvu from tai_khoan as tk  join chuc_vu as cv
         on tk.id_chucvu = cv.id where cv.ten_chucvu LIKE '%admin%' or cv.ten_chucvu LIKE '%nhân viên%'";
     if ($keyw != "") {
         $sql .= " AND ho_ten LIKE '%" . $keyw . "%'";
@@ -81,8 +81,24 @@ function delete_tk_nd($id)
     $result = pdo_execute($sql);
 }
 
-function load_sl_kh(){
-    $sql="select count(tai_khoan.id) as sl from tai_khoan where id_chucvu = '0' ";
+function load_sl_kh()
+{
+    $sql = "select count(tai_khoan.id) as sl from tai_khoan where id_chucvu = '0' ";
     $count_user = pdo_query($sql);
     return $count_user;
+}
+
+//client (giao diện người dùng)
+
+function insert_tk($user, $pass)
+{
+    $sql = "insert into tai_khoan(user_name,pass) values('$user','$pass')";
+    pdo_execute($sql);
+}
+
+function check_user($name, $pass)
+{
+      $sql = "select * from tai_khoan where user_name='".$name."' AND pass='".$pass."'";
+      $result = pdo_query_one($sql);
+      return $result;
 }
