@@ -18,7 +18,7 @@ if (isset($_SESSION['user']) && is_array($_SESSION['user'])) {
     $count_sp = load_sl_sp();
     $sl_kh = load_sl_kh();
     $sl_news = load_sl_baiviet();
-    $sl_order=load_sl_order();
+    $sl_order = load_sl_order();
     if (isset($_GET['act']) && ($_GET['act'] != "")) {
         $act = $_GET['act'];
         switch ($act) {
@@ -119,7 +119,7 @@ if (isset($_SESSION['user']) && is_array($_SESSION['user'])) {
                     $img = $_FILES['anhsp']['name'];
                     $tmp_img = $_FILES['anhsp']['tmp_name'];
                     move_uploaded_file($tmp_img, "../../upload/" . $img);
-                    update_sp($tensp, $img,$giasp, $ngaynhap, $mota, $iddm, $id);
+                    update_sp($tensp, $img, $giasp, $ngaynhap, $mota, $iddm, $id);
                     $thongbao = "cap nhat thanh cong !";
                 }
                 $listdm = load_list_dm();
@@ -645,11 +645,15 @@ if (isset($_SESSION['user']) && is_array($_SESSION['user'])) {
                 break;
 
             case "chitiet_donhang";
-            if (isset($_GET['idhd']) && ($_GET['idhd'] > 0)) {
-                $load_ctdh=load_chitiet_hd($_GET['idhd']);
-            }
-            $ist_dh = load_list_hoadon($_GET['idhd']);
+                if (isset($_GET['idhd']) && ($_GET['idhd'] > 0)) {
+                    $load_ctdh = load_chitiet_hd($_GET['idhd']);
+                }
+                $ist_dh = load_list_hoadon($_GET['idhd']);
                 include "donhang/chitiet_donhang.php";
+                break;
+
+            case "xoa_dh":
+                include "donhang/list_donhang.php";
                 break;
 
             case "thoat":

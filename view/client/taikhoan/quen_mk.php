@@ -1,3 +1,4 @@
+
  <!--breadcrumbs area start-->
  <div class="breadcrumbs_area">
      <div class="container">
@@ -20,32 +21,50 @@
      <div class="container">
          <div class="row">
              <!--login area start-->
-          
+             <div class="col-lg-6 col-md-6">
+                 <div class="account_form">
+                     <h2>Quên mật khẩu</h2>
+                     <form action="index.php?act=quen_mk" method="post">
+                         <p>
+
+                             <label>email của bạn <span>*</span></label>
+                             <input type="email" name="email" placeholder="Nhập email...">
+                         </p>
+                         <div >
+                           <input class="dangnhap" style="width: 150px; margin-left: 350px;"  type="submit" name="gui" value="Gửi">
+                         </div>
+                         <?php
+                                if (isset($thongbao_email) && ($thongbao_email) != "") {
+                                    echo "<font color='red'>". $thongbao_email."</font>";
+                                }
+                        ?>
+                     </form>
+                 </div>
+             </div>
              <!--login area start-->
 
              <!--register area start-->
              <div class="col-lg-6 col-md-6">
                  <div class="account_form register">
-                     <h2>Đăng kí tài khoản</h2>
-                     <form action="index.php?act=dangki_tk" method="POST">
-                         <p>
-                             <label>user name<span>*</span></label>
-                             <input type="text" name="user">
+                     <h2>Đổi mật khẩu</h2>
+                     <form action="index.php?act=change_mk" method="POST">
+                     <p>
+                             <label>Mật khẩu cũ<span>*</span></label>
+                             
+                             <input type="text" name="mk_old" value="<?php if(isset($mk)&&($mk!="")) echo $mk?>">
                          </p>
                          <p>
-                             <label>Passwords <span>*</span></label>
-                             <input type="password" name="pass">
+                             <label>Mật khẩu mới<span>*</span></label>
+                             <input type="password" name="pass" placeholder="Mật khẩu mới...">
                          </p>
-
-                         <div class="login_submit">
+                         <div >
                              <?php
-                                if (isset($thongbao) && ($thongbao) != "") {
-                                    echo $thongbao;
+                                if (isset($thongbao_ud) && ($thongbao_ud) != "") {
+                                    echo $thongbao_ud;
                                 }
                                 ?>
-                             
-                           <a  href="index.php?act=dangki_tk"><input style="height: 20px; color: blue;" type="submit" name="dangki" value="đăng kí"></a> 
-                            
+                                <input type="hidden" name="idmk" value="<?php if(isset($id)&&($id!="")) echo $id ;?>">
+                               <input  style="width: 150px; margin-left: 350px;" class="dangki" type="submit"  name="capnhatmk" value="Cập nhập">
 
                          </div>
 

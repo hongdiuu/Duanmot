@@ -43,6 +43,75 @@
 
     <!--modernizr min js here-->
     <script src="../../thu_vien/asset/js/vendor/modernizr-3.7.1.min.js"></script>
+    <style>
+        .quenmk:hover{
+            color: #252525;
+            font-weight: 700;
+        }
+        .xoa_cmt {
+            color: black;
+            font-weight: 700;
+            float: right;
+            padding-right: 20px;
+
+        }
+
+        .xoa_cmt:hover {
+            color: #09c6ab;
+        }
+        .dangnhap{
+        width: 100px; margin-right: 30px;
+        }
+        .dangnhap:hover {
+            background-color: #09c6ab;
+            color: #fff;
+        }
+       
+        .dangki:hover {
+            background-color: #09c6ab;
+            color: #fff;
+        }
+
+        .giohang{
+    line-height: 44px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    background: #ffffff;
+    display: block;
+    border: none;
+    transition: ease .3s all;
+    translate: 60px;
+  
+        }
+        .giohang:hover{
+           color: #09c6ab;
+           
+        }
+        .single_product:hover .action_links button{
+            transform: translateX(0);
+            transform: translateX(-60px);
+        }
+        .xoacard{
+     background: #252525;
+    border: 0;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    height: 38px;
+    line-height: 18px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+        }
+        .xoacard:hover{
+            background-color: #09c6ab;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
@@ -76,11 +145,11 @@
                                                 <div class="mega_menu">
                                                     <ul class="mega_menu_inner">
                                                         <li><a href="#">Danh mục sản phẩm</a>
-                                                            <?php   
-                                                          
+                                                            <?php
+
                                                             foreach ($all_dm as  $value) {
                                                                 extract($value);
-                                                             
+
                                                                 $link = "index.php?act=sanpham&iddm=" . $id;
                                                                 echo '<ul>
                                                         <li><a href="' . $link . '">' . $ten_dm . '</a></li> 
@@ -104,7 +173,7 @@
                                             <!-- <li><a href="about.html">about Us</a></li> -->
                                             <li><a href="index.php?act=lienhe"> Liên hệ</a></li>
                                             <li><a href="index.php?act=dangnhap_tk"> Đăng Nhập</a></li>
-                                            
+
                                         </ul>
                                     </nav>
                                 </div>
@@ -123,10 +192,27 @@
                                             <div class="dropdown_account">
                                                 <div class="dropdown_account-list">
                                                     <ul>
-                                                        <li><a href="index.php?act=dangnhap"> Đăng Nhập</a></li>
-                                                        <li><a href="index.php?act=taikhoan">Tài Khoản</a></li>
+                                                        <?php
+                                                         if (isset($_SESSION['user']['id']) and $_SESSION['user']['id']>0){
+                                                            ?> 
+                                                        <li><a href="#">user: <?=$_SESSION['user']['ho_ten']?></a></li>
+                                                        <li><a href="index.php?act=edit_tk">Tài Khoản</a></li>
                                                         <li><a href="index.php?act=giohang">Giỏ Hàng</a></li>
                                                         <li><a href="index.php?act=thanhtoan">Thanh toán</a></li>
+                                                        <li><a href="index.php?act=logout">Logout</a></li>
+                                                            <?php    
+                                                         }else{
+                                                            ?>
+                                                                  <li><a href="index.php?act=edit_tk">Tài Khoản</a></li>
+                                                        <li><a href="index.php?act=giohang">Giỏ Hàng</a></li>
+                                                        <li><a href="index.php?act=thanhtoan">Thanh toán</a></li>
+                                                            <?php
+                                                         }
+                                                       
+
+                                                        ?>
+                                                       
+                                                      
                                                     </ul>
                                                 </div>
                                             </div>
@@ -135,21 +221,35 @@
                                             <!--mini cart-->
                                             <div class="mini_cart">
                                                 <div class="cart_gallery">
-                                                    <div class="cart_item">
+                                                    <?php
+                                                     $tongtien=0;
+                                                     $i=0;
+                                                    foreach ($_SESSION['mycard'] as  $card) {
+                                                        $hinh=$card['3'];
+                                                        $tensp=$card['1'];
+                                                        $soluong=$card['4'];
+                                                        $thanhtien=$card['5'];
+                                                        $giasp=$card['2'];
+                                                        $tongtien+=$thanhtien;
+                                                        $linkdelete = "index.php?act=deletecard&id_card=".$i;
+                                                        echo'   <div class="cart_item">
                                                         <div class="cart_img">
-                                                            <a href="#"><img src="../../thu_vien/asset/img/s-product/product.jpg" alt=""></a>
+                                                            <a href="#"><img style="width: 80px; height: 100px;" src="../../upload/'.$hinh.'" alt=""></a>
                                                         </div>
                                                         <div class="cart_info">
-                                                            <a href="#">Primis In Faucibus</a>
-                                                            <p>1 x <span> $65.00 </span></p>
+                                                            <a href="#">'.$tensp.'</a>
+                                                            <p>1 x <span> '.$giasp.' </span></p>
                                                         </div>
                                                         <div class="cart_remove">
-                                                            <a href="#"><i class="fa fa-times-circle"></i></a>
+                                                            <a href="'.$linkdelete.'"><i class="fa fa-times-circle"></i></a>
                                                         </div>
-                                                    </div>
-                                                    <div class="cart_item">
+                                                    </div>';
+                                                    $i+=1;
+                                                    }
+                                                    ?>
+                                                    <!-- <div class="cart_item">
                                                         <div class="cart_img">
-                                                            <a href="#"><img src="../../thu_vien/asset/img/s-product/product2.jpg" alt=""></a>
+                                                            <a href="#"><img style="width: 80px; height: 100px;" src="../../thu_vien/asset/img/s-product/product2.jpg" alt=""></a>
                                                         </div>
                                                         <div class="cart_info">
                                                             <a href="#">Letraset Sheets</a>
@@ -158,17 +258,17 @@
                                                         <div class="cart_remove">
                                                             <a href="#"><i class="fa fa-times-circle"></i></a>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <div class="mini_cart_table">
                                                     <div class="cart_table_border">
                                                         <div class="cart_total">
                                                             <span>Sub total:</span>
-                                                            <span class="price">$125.00</span>
+                                                            <span class="price"><?=$tongtien?></span>
                                                         </div>
                                                         <div class="cart_total mt-10">
                                                             <span>total:</span>
-                                                            <span class="price">$125.00</span>
+                                                            <span class="price"><?=$tongtien?></span>
                                                         </div>
                                                     </div>
                                                 </div>

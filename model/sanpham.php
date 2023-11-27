@@ -97,3 +97,15 @@ $sql="select * from sanpham order by luot_xem desc";
 $list=pdo_query($sql);
 return $list;
 }
+
+function load_one_ctsp($id){
+    $sql="select * from sp_bienthe join sanpham on sp_bienthe.id_sp = sanpham.id join danh_muc on sanpham.id_dm=danh_muc.id where sanpham.id = $id";
+    $spct=pdo_query($sql);
+return $spct;
+}
+function load_sp_cungloai($id, $iddm)
+{
+    $sql = "select * from sanpham where id_dm = $iddm and id <> $id";
+    $result = pdo_query($sql);
+    return $result;
+}

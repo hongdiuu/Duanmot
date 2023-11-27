@@ -37,4 +37,12 @@ function delete_km($idsp)
     $sql = "delete from khuyen_mai where id=" . $idsp;
     $result = pdo_execute($sql);
 }
+
+function check_makm($makm)
+{
+    $sql = "select * from khuyen_mai where ma_km='".$makm."'";
+    $result = pdo_query_one($sql);
+    return $result; 
+}
+
 ?>

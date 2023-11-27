@@ -90,9 +90,9 @@ function load_sl_kh()
 
 //client (giao diện người dùng)
 
-function insert_tk($user, $pass)
+function insert_tk($user, $pass,$fullname,$email)
 {
-    $sql = "insert into tai_khoan(user_name,pass) values('$user','$pass')";
+    $sql = "insert into tai_khoan(user_name,pass,ho_ten,email) values('$user','$pass','$fullname','$email')";
     pdo_execute($sql);
 }
 
@@ -102,3 +102,15 @@ function check_user($name, $pass)
       $result = pdo_query_one($sql);
       return $result;
 }
+function check_email($email)
+{
+      $sql = "select * from tai_khoan where email='".$email."'";
+      $result = pdo_query_one($sql);
+      return $result;
+}
+
+function update_mk($id,$pass){
+    $sql = "update tai_khoan set pass='$pass' where id=$id";
+    pdo_execute($sql);
+}
+

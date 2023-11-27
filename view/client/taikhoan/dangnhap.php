@@ -5,8 +5,8 @@
              <div class="col-12">
                  <div class="breadcrumb_content">
                      <ul>
-                         <li><a href="index.php">home</a></li>
-                         <li>My account</li>
+                         <li><a href="index.php">Trang chủ</a></li>
+                         <li>Đăng nhập</li>
                      </ul>
                  </div>
              </div>
@@ -25,24 +25,24 @@
                      <h2>Đăng nhập</h2>
                      <form action="index.php?act=dangnhap_tk" method="post">
                          <p>
-                             <label>Username or email <span>*</span></label>
+                             <label> Tên đăng nhập<span>*</span></label>
                              <input type="text" name="user">
                          </p>
                          <p>
-                             <label>Passwords <span>*</span></label>
+                             <label>Mật khẩu <span>*</span></label>
                              <input type="password" name="pass">
                          </p>
                          <div >
-                             <a href="#">Lost your password?</a>
+                             <a class="quenmk" href="index.php?act=quen_mk">Quên mật khẩu?</a>
                            
 
                            
-                           <input style="width: 150px; margin-left: 200px;"  type="submit" name="login" value="đăng nhập">
+                           <input class="dangnhap" style="width: 150px; margin-left: 200px;"  type="submit" name="login" value="Đăng nhập">
 
                          </div>
                          <?php
                                 if (isset($thongbao1) && ($thongbao1) != "") {
-                                    echo $thongbao1;
+                                    echo "<font color='red'>".$thongbao1."</font>";
                                 }
                         ?>
                      </form>
@@ -55,12 +55,20 @@
                  <div class="account_form register">
                      <h2>Đăng kí tài khoản</h2>
                      <form action="index.php?act=dangki_tk" method="POST">
+                     <p>
+                             <label>Họ và Tên<span>*</span></label>
+                             <input type="text" name="fullname">
+                         </p>
                          <p>
-                             <label>user name<span>*</span></label>
+                             <label>Email<span>*</span></label>
+                             <input type="email" name="email">
+                         </p>
+                         <p>
+                             <label>Tên đăng nhập<span>*</span></label>
                              <input type="text" name="user">
                          </p>
                          <p>
-                             <label>Passwords <span>*</span></label>
+                             <label>Mật khẩu <span>*</span></label>
                              <input type="password" name="pass">
                          </p>
 
@@ -71,7 +79,7 @@
                                 }
                                 ?>
                              
-                               <input  style="width: 150px; margin-left: 350px;" type="submit" name="dangki" name="dangki" value="đăng kí">
+                               <input  style="width: 150px; margin-left: 350px;" class="dangki" type="submit"  name="dangki" value="Đăng kí">
 
                          </div>
 

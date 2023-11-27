@@ -2,7 +2,7 @@
 session_start();
 include "../../model/pdo.php";
 include "../../model/login.php";
-$thongbao="UserName or password not provided";
+
 if (isset($_POST['dangnhap'])) {
     $user = $_POST['user'];
     $pass = $_POST['pass'];
@@ -10,13 +10,13 @@ if (isset($_POST['dangnhap'])) {
        if ( is_array($checkuser)) {
         $_SESSION['user'] = $checkuser;
         extract( $_SESSION['user']);
-        if ($id_chucvu == 1) {
+        if ($id_chucvu != 0 ) {
             header('location:index.php');
         }else{
-            // $thongbao="UserName or password not provided";
-            header('location:login_admin.php');
-       }
-}
+            $thongbao1="UserName or password not provided";
+           
+        }
+    }
 }
 
 ?>
@@ -82,8 +82,8 @@ if (isset($_POST['dangnhap'])) {
                         <div style="padding-top: 10px; padding-left: 40px;">
 
                         <?php
-                          if (isset($thongbao) && $thongbao != "") {
-                            echo $thongbao;
+                          if (isset($thongbao1) && $thongbao1 != "") {
+                            echo $thongbao1;
                           }
                           
                        

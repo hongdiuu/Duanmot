@@ -43,7 +43,7 @@ include 'boxleft.php';
                         <td>' . $pass . '</td>
                         <td>' . $ho_ten . '</td>
                         <td>' . $ngay_sinh . '</td>
-                        <td>' . $dia_chi . ' </td>
+                        <td style="width: 100px; height: auto;">' . $dia_chi . ' </td>
                         <td>' . $email . '</td>
                         <td>' . $sdt . '</td>
                         <td>' . $ten_chucvu . '</td>
@@ -60,6 +60,7 @@ include 'boxleft.php';
                     </tr>';
                     }
                     ?>
+                   
                 </tbody>
             </table>
         </div>

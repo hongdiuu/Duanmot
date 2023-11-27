@@ -8,7 +8,7 @@
 
             ?>
 
-                <div class="single_slider d-flex align-items-center" data-bgimg="../../thu_vien/asset/img/slider/<?= $hinh_anh ?>">
+                <div class="single_slider d-flex align-items-center" data-bgimg="../../upload/<?= $hinh_anh ?>">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-7">
@@ -57,12 +57,13 @@
                             <?php
                             foreach ($all_sp as $value) {
                                 extract($value);
+                                $link = "index.php?act=sanphamct&idsp=" . $id;
                             ?>
                                 <div class="col-lg-3">
                                     <article class="single_product">
                                         <figure>
                                             <div class="product_thumb">
-                                                <a class="primary_img" href="index.php?act=chitietsanpham"><img src="../../thu_vien/asset/img/product/<?= $anh_sp ?>" alt=""></a>
+                                                <a class="primary_img" href="<?=$link?>"><img src="../../upload/<?= $anh_sp ?>" alt=""></a>
 
                                                 <div class="action_links">
                                                     <ul>
@@ -72,7 +73,7 @@
                                             </div>
                                             <figcaption class="product_content">
                                                 <div class="product_content-header">
-                                                    <h4 class="product_name"><a href="index.php?act=chitietsanpham"><?= $ten_sp ?></a></h4>
+                                                    <h4 class="product_name"><a href="<?=$link?>"><?= $ten_sp ?></a></h4>
                                                     <div class="wishlist-btn">
                                                         <a href="#"><i class="zmdi zmdi-favorite-outline"></i></a>
                                                     </div>
@@ -160,7 +161,7 @@
                                     </div>
                                     <figcaption class="product_content">
                                         <div class="product_content-header">
-                                            <h4 class="product_name"><a href="index.php?act=chitietsanpham"><? $ten_sp ?></a></h4>
+                                            <h4 class="product_name"><a href="index.php?act=chitietsanpham"><?=$ten_sp ?></a></h4>
                                             <div class="wishlist-btn">
                                                 <a href="#"><i class="zmdi zmdi-favorite-outline"></i></a>
                                             </div>

@@ -43,17 +43,10 @@
                         <h3>Tell us your project</h3>   
                         <form id="contact-form" method="POST"  action="https://htmldemo.net/presiden/presiden/thu_vien/asset/mail.php">
                             <p>  
-                               <label> Your Name (required)</label>
+                               <label>Tên khách hàng</label>
                                 <input name="name" placeholder="Name *" type="text"> 
                             </p>
-                            <p>       
-                               <label>  Your Email (required)</label>
-                                <input name="email" placeholder="Email *" type="email">
-                            </p>
-                            <p>          
-                               <label>  Subject</label>
-                                <input name="subject" placeholder="Subject *" type="text">
-                            </p>    
+                          
                             <div class="contact_textarea">
                                 <label>  Your Message</label>
                                 <textarea placeholder="Message *" name="message"  class="form-control2" ></textarea>     

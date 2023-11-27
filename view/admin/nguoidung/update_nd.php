@@ -53,7 +53,7 @@ if (is_array($load_one_nd)) {
                             <?php
                             foreach ($list_cv as $value) {
                                 extract($value);
-                                if ($id_chucvu == $idnd) {
+                                if ($id_chucvu == $id) {
                                     echo '  <option value="' . $id . '" selected>' . $ten_chucvu . '</option>';
                                 } else {
                                     echo '  <option value="' . $id . '">' . $ten_chucvu . '</option>';

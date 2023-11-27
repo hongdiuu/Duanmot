@@ -33,8 +33,9 @@
                                       <?php
                                         foreach ($all_dm as $dm_sp) {
                                             extract($dm_sp);
+                                            $link = "index.php?act=sanpham&iddm=" . $id;
                                             echo ' <ul class="widget_dropdown_categories dropdown_categories1">
-                                    <li><a href="#">' . $ten_dm . '</a></li>
+                                    <li><a href="' . $link . '">' . $ten_dm . '</a></li>
                                     
                                 </ul>';
                                         }
@@ -50,7 +51,7 @@
                                   <li>
                                       <a href="#">Black <span>(6)</span></a>
                                   </li>
-                                 
+
 
                               </ul>
                           </div>
@@ -102,72 +103,86 @@
                           </form>
                       </div>
                       <div class="page_amount">
-                          <p>tổng sản phẩm</p>
+                          <?php
+                            foreach ($count_sp as $value) {
+                                extract($value);
+                                echo '  <p>tổng sản phẩm ' . $sl . '</p> ';
+                            }
+                            ?>
+
                       </div>
                   </div>
                   <!--shop toolbar end-->
                   <div class="row shop_wrapper">
-                    <?php
-                    foreach ($all_sp as $value) {
-                        extract($value);
-                    ?>
-                    <div class="col-lg-4 col-md-4 col-12 ">
-                          <article class="single_product">
-                              <figure>
-                                  <div class="product_thumb">
-                                      <a class="primary_img" href="index.php?act=chitietsanpham"><img src="../../thu_vien/asset/img/product/<?=$anh_sp?>" alt=""></a>
+                      <?php
+                        foreach ($all_sp as $value) {
+                            extract($value);
+                            $link = "index.php?act=sanphamct&idsp=" . $id;
+                        ?>
+                          <div class="col-lg-4 col-md-4 col-12 ">
+                              <article class="single_product">
+                                  <figure>
+                                      <form action="index.php?act=giohang" method="post">
+                                          <div class="product_thumb">
+                                              <a class="primary_img" href="<?= $link ?>"><img src="../../upload/<?= $anh_sp ?>" alt=""></a>
 
-                                      <div class="action_links">
-                                          <ul>
-                                              <li class="add_to_cart"><a href="cart.html" title="Add to cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                              <div class="action_links">
+                                                  <ul>
+                                                    <input type="hidden" name="id" value="<?=$id?>">
+                                                    <input type="hidden" name="name" value="<?= $ten_sp ?>">
+                                                    <input type="hidden" name="price" value="<?= $gia_sp ?>">
+                                                    <input type="hidden" name="img" value="<?= $anh_sp ?>">
+                                                      <button type="submit" class="giohang" name="addcard">
+                                                          <i class="zmdi zmdi-shopping-cart"></i>
+                                                      </button>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                          <div class="product_content grid_content">
+                                              <div class="product_content-header">
+                                                  <h4 class="product_name"><a href="<?= $link ?>"><?= $ten_sp ?></a></h4>
+                                                  <div class="wishlist-btn">
+                                                      <a href="#"><i class="zmdi zmdi-favorite-outline"></i></a>
+                                                  </div>
+                                              </div>
+                                              <div class="product_price_rating">
+                                                  <div class="price_box">
+                                                      <span class="current_price">$<?= $gia_sp ?></span>
+                                                  </div>
+                                                  <div class="product_rating">
+                                                      <ul>
+                                                          <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                                          <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                                          <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                                          <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                                          <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                                      </ul>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="product_content list_content">
+                                              <h4 class="product_name"><a href="index.php?act=chitietsanpham"><?= $ten_sp ?></a></h4>
+                                              <div class="product_desc">
+                                                  <p><?= $mo_ta ?></p>
+                                              </div>
+                                              <div class="product_price_rating">
+                                                  <div class="price_box">
+                                                      <span class="current_price"><?= $gia_sp ?></span>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </form>
+                                  </figure>
+                              </article>
+                          </div>
 
-                                          </ul>
-                                      </div>
-                                  </div>
-                                  <div class="product_content grid_content">
-                                      <div class="product_content-header">
-                                          <h4 class="product_name"><a href="index.php?act=chitietsanpham"><?=$ten_sp?></a></h4>
-                                          <div class="wishlist-btn">
-                                              <a href="#"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                          </div>
-                                      </div>
-                                      <div class="product_price_rating">
-                                          <div class="price_box">
-                                              <span class="current_price">$<?=$gia_sp?></span>
-                                          </div>
-                                          <div class="product_rating">
-                                              <ul>
-                                                  <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                                  <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                                  <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                                  <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                                  <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="product_content list_content">
-                                      <h4 class="product_name"><a href="index.php?act=chitietsanpham"><?=$ten_sp?></a></h4>
-                                      <div class="product_desc">
-                                          <p><?=$mo_ta?></p>
-                                      </div>
-                                      <div class="product_price_rating">
-                                          <div class="price_box">
-                                              <span class="current_price"><?=$gia_sp?></span>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </figure>
-                          </article>
-                      </div>
-                 
-            
-                    <?php
-                    }
-                    
-                    ?>
-        
-        </div>
+
+                      <?php
+                        }
+
+                        ?>
+
+                  </div>
                   <div class="shop_toolbar t_bottom">
                       <div class="pagination">
                           <ul>
