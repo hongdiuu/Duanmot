@@ -30,7 +30,7 @@ include './boxleft.php';
         <div class="inner">
           <h3>
             <?php
-            foreach ($count_sp as $value) {
+            foreach ($sl_sp as $value) {
               extract($value);
               echo ' ' . $sl . '<sup style="font-size: 20px">sản phẩm</sup></h3>';
             }
@@ -40,7 +40,7 @@ include './boxleft.php';
         <div class="icon">
           <i class="ion ion-stats-bars"></i>
         </div>
-        <a href="index.php?act=list_sp_bt" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="index.php?act=list_sp" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->

@@ -39,7 +39,7 @@
           <img src="../../thu_vien/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="index.php" class="d-block">Nhóm 2 dự án 1</a>
+          <a href="index.php" class="d-block">Nhóm 5 dự án 1</a>
         </div>
       </div>
 
@@ -75,12 +75,6 @@
                 <a href="index.php?act=list_sp" class="nav-link">
                 <i class="bi bi-archive-fill"></i>
                   <p>Quản lí sản phẩm  </p>
-                </a>
-              </li>
-          <li class="nav-item">
-                <a href="index.php?act=list_sp_bt" class="nav-link">
-                <i class="bi bi-archive-fill"></i>
-                  <p>Quản lí biến thể sản phẩm </p>
                 </a>
               </li>
           <li class="nav-header">Tài Khoản</li>
